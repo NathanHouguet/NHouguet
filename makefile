@@ -16,6 +16,12 @@ miniproj.o: miniproj.cpp
 Drawing.o: src/Drawing.cpp
 	g++ $(CFLAGS) -c src/Drawing.cpp $(LDFLAGS)
 
+Segment.o: src/Segment.cpp
+	g++ $(CFLAGS) -c src/Segment.cpp $(LDFLAGS)
+
+Point.o: src/point.cpp
+	g++ $(CFLAGS) -c src/Point.cpp $(LDFLAGS)
+
 .PHONY: test clean
 
 clean:
