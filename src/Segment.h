@@ -1,18 +1,18 @@
 #ifndef SEGMENT_H
 #define SEGMENT_H
 
-#include <string>
-#include <vector>
+#include "Point.h"
+#include <iostream>
 
-class Segment {
+class Segment : public Point {
 public:
-  Segment(const Point &a, const Point &b);
-  ~Segment();
-
-  void afficher() const;
+Segment (Point , Point );
+~Segment ();
+void afficher (void);
 
 private:
-  Point org, ext;
+Point origine;
+Point extremite;
 };
 
 #endif /* SEGMENT_H */

@@ -2,12 +2,11 @@
 #include <string>
 
 #include "Drawing.h"
-<<<<<<< HEAD
 #include "Point.h"
 #include "Segment.h"
-=======
 #include "Figure.h"
->>>>>>> 51b3bb32acecda2795404c2f78fb1c6bdae3b07d
+#include "Carre.h"
+
 
 const int width = 300;
 const int height = 400;
@@ -17,6 +16,12 @@ int main(int argc, char **argv) {
   Drawing draw(width, height);
 
   draw.save(std::string("test_image.bmp"));
+
+Point A(1,2), B(3,7);
+Segment S(A,B);
+S.afficher();
+
+
 
   return 0;
 }

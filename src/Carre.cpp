@@ -1,31 +1,32 @@
 #include "Carre.h"
 
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include <stb_image_write.h>
-#include <stdexcept>
+Carre::Carre(int nlargeur, int nhauteur, Point norigine){
 
-//            _    _  _                     _    _           _
-//  ___  _ _ | |_ | |<_> ___  ._ _ _  ___ _| |_ | |_  ___  _| | ___
-// | . \| | || . \| || |/ | ' | ' ' |/ ._> | |  | . |/ . \/ . |<_-<
-// |  _/`___||___/|_||_|\_|_. |_|_|_|\___. |_|  |_|_|\___/\___|/__/
-// |_|
+largeur=nlargeur;
+hauteur=nhauteur;
 
-Carre::Carre() :  {
-  
+origine.setX(norigine.getX());
+origine.setY(norigine.getY());
+
 }
 
 Carre::~Carre() {}
 
+Carre::Carre(Point norigine) {
 
+largeur=0;
+hauteur=0;
 
-//            _             _                      _    _           _
-//  ___  _ _ <_> _ _  ___ _| |_ ___  ._ _ _  ___ _| |_ | |_  ___  _| | ___
-// | . \| '_>| || | |<_> | | | / ._> | ' ' |/ ._> | |  | . |/ . \/ . |<_-<
-// |  _/|_|  |_||__/ <___| |_| \___. |_|_|_|\___. |_|  |_|_|\___/\___|/__/
-// |_|
-
-
-void Carre::blabla() {
-
+origine.setX(norigine.getX());
+origine.setY(norigine.getY());
  
+}
+
+Carre::Carre(){
+
+largeur=0;
+hauteur=0;
+
+origine.setX(0);
+origine.setY(0);
 }

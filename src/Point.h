@@ -1,24 +1,22 @@
 #ifndef POINT_H
 #define POINT_H
 
-#include <string>
-#include <vector>
 
 class Point {
 public:
-  Point(float x0, float y0) {
-    x = x0;
-    y = y0;
-  }
+Point(int , int );
+Point (); 
+~Point();
 
-  float getX() const { return x; }
-  float getY() const { return y; }
+int getX(void);
+int getY(void);
 
-  void setX(float nx) { x = nx; }
-  void setY(float ny) { y = ny; }
+void setX(int );
+void setY(int );
 
 private:
-  float x, y;
+int x;
+int y;
 };
 
 #endif /* POINT_H */

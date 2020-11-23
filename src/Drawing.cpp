@@ -1,4 +1,5 @@
 #include "Drawing.h"
+#include "Figure.h"
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb_image_write.h>
@@ -28,6 +29,8 @@ void Drawing::save(std::string filename) {
   createTestImage();
   stbi_write_bmp(filename.c_str(), width, height, 1, image.data());
 }
+
+
 
 //            _             _                      _    _           _
 //  ___  _ _ <_> _ _  ___ _| |_ ___  ._ _ _  ___ _| |_ | |_  ___  _| | ___

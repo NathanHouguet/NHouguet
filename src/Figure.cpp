@@ -8,6 +8,13 @@ Figure::Figure(int largeur, int hauteur): largeur(largeur), hauteur(hauteur) {
 image.resize(largeur * hauteur);
 }
 
+Figure::Figure(){
+
+hauteur=0;
+largeur=0;
+
+}
+
 Figure::~Figure() {}
 
 void Figure::setPoint (std::vector<char> & image, int position){
@@ -31,3 +38,4 @@ monImage[i]=image[i];
 }
 return monImage;
 }
+

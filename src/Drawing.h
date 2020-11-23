@@ -6,10 +6,11 @@
 
 class Drawing {
 public:
-  Drawing(const int width, const int height);
-  ~Drawing();
+Drawing(const int width, const int height);
+~Drawing();
 
-  void save(std::string filename);
+void save(std::string filename);
+
 
 private:
   void clearImage();

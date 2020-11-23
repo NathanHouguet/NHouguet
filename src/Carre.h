@@ -1,25 +1,19 @@
 #ifndef CARRE_H
 #define CARRE_H
 
-#include <string>
-#include <vector>
+#include "Figure.h"
+#include "Point.h"
 
-class Carre : public Figure {
+class Carre : public Figure, public Point {
 public:
-  Carre(const int width, const int height);
-  ~Carre();
-
-  void save(std::string filename);
-
-private:
-  void clearImage();
-  void createTestImage();
+Carre(int ,int , Point);
+Carre(Point);
+Carre();
+~Carre();
 
 private:
-  const int width;
-  const int height;
+Point origine;
 
-  std::vector<char> image;
 };
 
 #endif /* CARRE_H */
