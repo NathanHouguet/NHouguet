@@ -5,6 +5,7 @@
 #include "Point.h"
 
 class Carre : public Figure, public Point {
+
 public:
 Carre(int ,int , Point);
 Carre(Point);
