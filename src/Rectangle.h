@@ -3,23 +3,17 @@
 
 #include <string>
 #include <vector>
+#include "Figure.h"
+#include "Point.h"
 
-class Rectangle : public Figure {
+class Rectangle:public Figure{
+
 public:
-  Rectangle(const int width, const int height);
-  ~Rectangle();
+/**** Définition des constructeurs et du destructeur ****/
+Rectangle(Point new_centre, const int new_hauteur, const int new_largeur);
+Rectangle(Point new_centre);
+~Rectangle();
 
-  void save(std::string filename);
-
-private:
-  void clearImage();
-  void createTestImage();
-
-private:
-  const int width;
-  const int height;
-
-  std::vector<char> image;
 };
 
 #endif /* RECTANGLE_H */

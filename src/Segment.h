@@ -1,20 +1,19 @@
 #ifndef SEGMENT_H
-#define SEGMENT_H
+#define SEGEMENT_H
 
+#include <string>
+#include <vector>
+#include "Figure.h"
 #include "Point.h"
-#include <iostream>
 
-class Segment : public Point {
+class Segment : public Figure {
+
 public:
-Segment (Point , Point );
-~Segment ();
-void afficher (void);
+/**** Définition des constructeurs / desctructeur ****/
+Segment(Point new_p, int new_height, int new_width);
+Segment(Point new_p);
+~Segment();
 
-private:
-Point origine;
-Point extremite;
 };
 
-#endif /* SEGMENT_H */
-
-
+#endif /* SEGEMENT_H */

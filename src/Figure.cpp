@@ -1,86 +1,54 @@
-#include "Figure.h"
+#include<stdio.h>
+#include"Figure.h"
 
-#include <stb_image_write.h>
-#include <stdexcept>
-#include <vector>
+/*****************************************************************************************************/
 
-/****************************************************************************************/
+Figure::Figure(Point new_centre, const int new_hauteur, const int new_largeur): width(new_largeur), height(new_hauteur),centre(new_centre){
 
-Figure::Figure(int largeur, int hauteur): largeur(largeur), hauteur(hauteur) {
-
-image.resize(largeur * hauteur);
+image.resize(new_largeur * new_hauteur);
 
 }
 
-/****************************************************************************************/
+/*****************************************************************************************************/
 
-Figure::Figure(){
+Figure::~Figure(){}
 
-hauteur=0;
-largeur=0;
+/*****************************************************************************************************/
 
-}
+void Figure::setPoint(int new_largeur,int new_hauteur){
 
-/****************************************************************************************/
-
-Figure::~Figure() {}
-
-void Figure::setPoint (std::vector<char> & image, int position){
-
-for(int i=0;i<image.size();i++){
-
-image[i]=255;
-
+if(new_largeur==0){
+image[(getHeight()-new_hauteur)*getWidth()+(new_largeur)] = 255;
+}else{
+image[(getHeight()-new_hauteur)*getWidth()+(new_largeur-1)] = 255;
 }
 
 }
 
-/****************************************************************************************/
+/*****************************************************************************************************/
 
-std::vector<char> Figure::getFigure(){
-
-std::vector<char> monImage;
-
-for(int i=0;i<image.size();i++){
-
-monImage[i]=image[i];
-
+const std::vector<char>& Figure::getImage(){
+return image;
 }
 
-return monImage;
+/*****************************************************************************************************/
 
+Point Figure::getCentre(){
+return centre;
 }
 
-/****************************************************************************************/
+/*****************************************************************************************************/
 
-int Figure::getLargeur (void){
-
-return largeur;
-
+int Figure::getHeight(){
+return height;
 }
 
-/****************************************************************************************/
+/*****************************************************************************************************/
 
-int Figure::getHauteur (void){
-
-return hauteur;
-
+int Figure::getWidth(){
+return width;
 }
 
-/****************************************************************************************/
-
-void Figure::setLargeur (int nlargeur){
-
-largeur=nlargeur;
-
-}
-
-/****************************************************************************************/
-
-void Figure::setHauteur (int nhauteur){
-
-hauteur=nhauteur;
-
-}
+/*****************************************************************************************************/
 
 

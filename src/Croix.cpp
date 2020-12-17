@@ -1,31 +1,67 @@
-#include "Croix.h"
+#include<stdio.h>
+#include"Croix.h"
 
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include <stb_image_write.h>
-#include <stdexcept>
+/***************************************************************************************/
 
-//            _    _  _                     _    _           _
-//  ___  _ _ | |_ | |<_> ___  ._ _ _  ___ _| |_ | |_  ___  _| | ___
-// | . \| | || . \| || |/ | ' | ' ' |/ ._> | |  | . |/ . \/ . |<_-<
-// |  _/`___||___/|_||_|\_|_. |_|_|_|\___. |_|  |_|_|\___/\___|/__/
-// |_|
+Croix::Croix(Point new_centre, const int new_hauteur, const int new_largeur): Figure(new_centre,new_hauteur,new_largeur){
 
-Croix::Croix() :  {
-  
+image.resize(getWidth()*getHeight());
+
+setMilieu(new_hauteur);
+
+for (int i=0;i<=getWidth();i++){
+setPoint(i,getMilieu());
 }
 
-Croix::~Croix() {}
-
-
-
-//            _             _                      _    _           _
-//  ___  _ _ <_> _ _  ___ _| |_ ___  ._ _ _  ___ _| |_ | |_  ___  _| | ___
-// | . \| '_>| || | |<_> | | | / ._> | ' ' |/ ._> | |  | . |/ . \/ . |<_-<
-// |  _/|_|  |_||__/ <___| |_| \___. |_|_|_|\___. |_|  |_|_|\___/\___|/__/
-// |_|
-
-
-void Croix::blabla() {
-
+for (int j=0;j<=getHeight();j++){
+setPoint(getMilieu(),j);
+}
  
 }
+
+/***************************************************************************************/
+
+Croix::Croix(Point new_centre):Figure(new_centre,1,1){
+
+image.resize(getWidth()*getHeight());
+
+setMilieu(1);
+
+for (int i=0;i<=getWidth();i++){
+setPoint(i,getMilieu());
+}
+
+for (int j=0;j<=getHeight();j++){
+setPoint(getMilieu(),j);
+}
+
+}
+
+/***************************************************************************************/
+
+Croix::~Croix(){}
+
+/***************************************************************************************/
+
+void Croix::setMilieu (int new_longueur){
+
+if(new_longueur%2==0){
+milieu=new_longueur+1/2;
+}
+else{
+milieu=new_longueur/2;
+}
+
+}
+
+/***************************************************************************************/
+
+int Croix::getMilieu (void){
+return milieu;
+}
+
+/***************************************************************************************/
+
+
+
+

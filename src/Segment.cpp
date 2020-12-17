@@ -1,23 +1,36 @@
-#include "Segment.h"
+#include<stdio.h>
+#include"Segment.h"
 
-Segment::Segment( Point na,  Point nb) {
-  
-origine.setX(na.getX());
-origine.setY(na.getY());
+/************************************************************************************************/
 
-extremite.setX(nb.getX());
-extremite.setY(nb.getY());
+Segment::Segment(Point new_p, int new_height, int new_width) : Figure(new_p, new_height, new_width){
+
+image.resize(getWidth() * getHeight());
+
+for (int j = 0; j < getHeight(); j++){
+	for (int i = 0; i < getWidth(); i++){
+	image[j * getWidth() + i] = 255;
+	}
+}
 
 }
 
-Segment::~Segment() {}
+/************************************************************************************************/
 
-void Segment::afficher() {
+Segment::Segment(Point new_p):Figure(new_p,1,1){
 
-std::cout << "origine(" << origine.getX() << "," << origine.getY() << ")" << ", extremite(" << extremite.getX() << "," << extremite.getY() << ")" << std::endl;
+image.resize(getWidth() * getHeight());
+
+for (int j = 0; j < getHeight(); j++){
+	for (int i = 0; i < getWidth(); i++){
+	image[j * getWidth() + i] = 255;
+	}
+}
 
 }
 
+/************************************************************************************************/
 
+Segment::~Segment(){}
 
 

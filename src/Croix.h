@@ -3,23 +3,27 @@
 
 #include <string>
 #include <vector>
+#include "Figure.h"
+#include "Point.h"
 
-class Croix : public Figure {
+/**** Heritage de la fonction Figure ****/
+class Croix:public Figure {
+
 public:
-  Croix(const int width, const int height);
-  ~Croix();
+/**** Définition des constructeurs et du destructeur ****/
+Croix(Point new_centre, const int new_hauteur, const int new_largeur);
+Croix (Point new_centre);
+~Croix();
 
-  void save(std::string filename);
+/**** Getter et Setter ****/
+void setMilieu(int new_milieu);
+int getMilieu(void);     
 
 private:
-  void clearImage();
-  void createTestImage();
+/**** Définition des attributs ****/
+int milieu;
 
-private:
-  const int width;
-  const int height;
-
-  std::vector<char> image;
 };
 
 #endif /* CROIX_H */
+

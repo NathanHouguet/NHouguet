@@ -1,31 +1,34 @@
-#include "Rectangle.h"
+#include<stdio.h>
+#include"Rectangle.h"
 
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include <stb_image_write.h>
-#include <stdexcept>
+/***********************************************************************************************/
 
-//            _    _  _                     _    _           _
-//  ___  _ _ | |_ | |<_> ___  ._ _ _  ___ _| |_ | |_  ___  _| | ___
-// | . \| | || . \| || |/ | ' | ' ' |/ ._> | |  | . |/ . \/ . |<_-<
-// |  _/`___||___/|_||_|\_|_. |_|_|_|\___. |_|  |_|_|\___/\___|/__/
-// |_|
+Rectangle::Rectangle(Point new_centre, const int new_hauteur, const int new_largeur):Figure(new_centre,new_hauteur,new_largeur){
 
-Rectangle::Rectangle() :  {
-  
+image.resize(getWidth() * getHeight());
+
+for (int j = 0; j < getHeight(); j++){
+	for (int i = 0; i < getWidth(); i++){
+	image[j * getWidth() + i] = 255;
+	}
 }
 
-Rectangle::~Rectangle() {}
-
-
-
-//            _             _                      _    _           _
-//  ___  _ _ <_> _ _  ___ _| |_ ___  ._ _ _  ___ _| |_ | |_  ___  _| | ___
-// | . \| '_>| || | |<_> | | | / ._> | ' ' |/ ._> | |  | . |/ . \/ . |<_-<
-// |  _/|_|  |_||__/ <___| |_| \___. |_|_|_|\___. |_|  |_|_|\___/\___|/__/
-// |_|
-
-
-void Rectangle::blabla() {
-
- 
 }
+
+/***********************************************************************************************/
+
+Rectangle::Rectangle (Point new_centre):Figure(new_centre,0,0){
+
+image.resize(getWidth() * getHeight());
+
+for (int j = 0; j < getHeight(); j++){
+	for (int i = 0; i < getWidth(); i++){
+	image[j * getWidth() + i] = 255;
+	}
+}
+
+}
+
+/***********************************************************************************************/
+
+Rectangle::~Rectangle(){}

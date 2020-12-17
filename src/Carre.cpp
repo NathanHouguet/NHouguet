@@ -1,41 +1,50 @@
-#include "Carre.h"
+#include<stdio.h>
+#include"Carre.h"
 
-/****************************************************************************************/
+/********************************************************************************************/
 
-Carre::Carre(int nlargeur, int nhauteur, Point norigine){
+Carre::Carre(Point new_centre, const int new_cote):Figure(new_centre,new_cote,new_cote){
 
-setLargeur(nlargeur);
-setHauteur(nhauteur);
+image.resize(getWidth() * getHeight());
 
-origine.setX(norigine.getX());
-origine.setY(norigine.getY());
+for (int j = 0; j < getHeight(); j++){
+	for (int i = 0; i < getWidth(); i++){
+	image[j*getWidth()+i]=255;
+	}
+}
 
 }
 
-/****************************************************************************************/
+/********************************************************************************************/
 
-Carre::~Carre() {}
+Carre::Carre(Point new_centre):Figure(new_centre,0,0){
 
-/****************************************************************************************/
+image.resize(getWidth() * getHeight());
 
-Carre::Carre(Point norigine) {
-
-setLargeur(0);
-setHauteur(0);
-
-origine.setX(norigine.getX());
-origine.setY(norigine.getY());
- 
+for (int j = 0; j < getHeight(); j++){
+	for (int i = 0; i < getWidth(); i++){
+	image[j*getWidth()+i]=255;
+	}
 }
 
-/****************************************************************************************/
+}
 
-Carre::Carre(){
+/********************************************************************************************/
 
-setLargeur(0);
-setHauteur(0);
+Carre::~Carre(){}
 
-origine.setX(0);
-origine.setY(0);
+/********************************************************************************************/
+
+void Carre::setCote (int new_cote){
+
+cote=new_cote;
+
+}
+
+/********************************************************************************************/
+
+int Carre::getCote (void){
+
+return cote;
 
 }

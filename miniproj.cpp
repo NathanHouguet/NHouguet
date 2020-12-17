@@ -2,26 +2,13 @@
 #include <string>
 
 #include "Drawing.h"
-#include "Point.h"
-#include "Segment.h"
 #include "Figure.h"
-#include "Carre.h"
+#include "Menu.h"
 
+int main(int argc, char **argv){
 
-const int width = 300;
-const int height = 400;
+Menu menu;
+menu.run();
+return 0;
 
-int main(int argc, char **argv) {
-
-  Drawing draw(width, height);
-
-  draw.save(std::string("test_image.bmp"));
-
-Point A(1,2), B(3,7);
-Segment S(A,B);
-S.afficher();
-
-
-
-  return 0;
 }
